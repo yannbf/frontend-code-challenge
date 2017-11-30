@@ -1,0 +1,8 @@
+{
+  "concurrent": false,
+  "linters": {
+    "src/**/*.ts": ["lint"],
+    "{src/*.scss, src/**/*.scss}": ["sasslint"],
+    "*": ["git add"]
+  }
+}
