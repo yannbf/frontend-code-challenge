@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { advertisementReducer } from './state/reducers';
 import { AdvertisementService } from './services';
+import { AdvertisementServiceMock } from './services/mock';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -15,7 +16,7 @@ import { AdvertisementService } from './services';
     HttpClientModule,
     StoreModule.forRoot({ advertisements: advertisementReducer }),
   ],
-  providers: [AdvertisementService],
+  providers: [AdvertisementService, AdvertisementServiceMock],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
