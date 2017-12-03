@@ -17,7 +17,7 @@ describe('AppComponent', () => {
         imports: [
           ComponentsModule,
           HttpClientModule,
-          StoreModule.forRoot({ advertisements: advertisementReducer }),
+          StoreModule.forRoot({ estates: advertisementReducer }),
         ],
         providers: [
           { provide: AdvertisementService, useClass: AdvertisementServiceMock },
