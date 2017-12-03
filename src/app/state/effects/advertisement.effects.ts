@@ -7,7 +7,7 @@ import {
   AdvertisementActionTypes,
   LoadAdvertisementsSuccessAction,
 } from '../actions';
-import { AdvertisementService } from '../../services/advertisement.service';
+import { AdvertisementService } from '../../services';
 import { AdvertisementServiceMock } from '../../services/mock';
 
 @Injectable()
