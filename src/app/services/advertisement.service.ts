@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Advertisement } from '../shared/models/index';
+import { Advertisement } from '../shared/models';
 
 @Injectable()
 export class AdvertisementService {
