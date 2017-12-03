@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdvertisementListComponent } from './advertisement-list.component';
+import { ComponentsModule } from '../components.module';
 
 describe('AdvertisementListComponent', () => {
   let component: AdvertisementListComponent;
@@ -9,7 +10,7 @@ describe('AdvertisementListComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [AdvertisementListComponent],
+        imports: [ComponentsModule],
       }).compileComponents();
     })
   );
