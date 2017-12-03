@@ -1,1 +1,10 @@
-{{ advertisements | json }}
+<ng-container *ngIf="!advertisements?.length; else showAdvertisements">
+  <h2>Oops! there are no advertisements to show right now :( Try some other time!</h2>
+</ng-container>
+
+<ng-template #showAdvertisements>
+  <app-advertisement-list-item
+    *ngFor="let advertisement of advertisements"
+    [advertisement]="advertisement">
+  </app-advertisement-list-item>
+</ng-template>
