@@ -36,9 +36,8 @@ describe('AdvertisementService', () => {
 
     it('should return a list of 15 advertisements', () => {
       const mockAdvertisements = AdvertisementServiceMock.ADVERTISEMENTS;
-
-      advertisementService.getAdvertisements().subscribe(coins => {
-        expect(coins.length).toBe(15);
+      advertisementService.getAdvertisements().subscribe(advertisements => {
+        expect(advertisements.length).toBe(15);
       });
 
       const req = httpMock.expectOne(endpoint);
