@@ -4,6 +4,11 @@ import 'rxjs/add/observable/of';
 import { Advertisement } from '../../shared/models';
 
 export class AdvertisementServiceMock {
+  public getAdvertisements(): Observable<Array<any>> {
+    return Observable.of(AdvertisementServiceMock.ADVERTISEMENTS);
+  }
+
+  // tslint:disable-next-line:member-ordering
   static ADVERTISEMENTS = [
     {
       advertisementPrice: {
@@ -1291,8 +1296,4 @@ export class AdvertisementServiceMock {
       },
     },
   ];
-
-  public getAdvertisements(): Observable<Array<any>> {
-    return Observable.of(AdvertisementServiceMock.ADVERTISEMENTS);
-  }
 }
