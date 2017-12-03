@@ -12,6 +12,7 @@ import { AdvertisementEffects } from './state/effects';
 import { AdvertisementService } from './services';
 import { AdvertisementServiceMock } from './services/mock';
 import { environment } from './../environments/environment';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -21,6 +22,7 @@ import { environment } from './../environments/environment';
     StoreModule.forRoot({ advertisements: advertisementReducer }),
     EffectsModule.forRoot([AdvertisementEffects]),
     environment.production ? [] : StoreDevtoolsModule.instrument(),
+    ComponentsModule,
   ],
   providers: [AdvertisementService, AdvertisementServiceMock],
   bootstrap: [AppComponent],
