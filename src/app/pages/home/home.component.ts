@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+
+import { Advertisement } from '../../shared/models';
+import { AdvertisementState } from '../../state/reducers';
+import { LoadAdvertisementsAction } from '../../state/actions';
+import { AdvertisementService } from '../../services';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +13,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  advertisements$: Observable<Array<Advertisement>>;
 
-  ngOnInit() {}
+  constructor(public store: Store<AdvertisementState>) {
+    this.advertisements$ = this.store.select<Array<Advertisement>>(
+      state => state.advertisements
+    );
+  }
+
+  ngOnInit() {
+    this.getAdvertisements();
+  }
+
+  getAdvertisements() {
+    this.store.dispatch(new LoadAdvertisementsAction());
+  }
 }
