@@ -5,7 +5,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages';
 import { advertisementReducer } from './state/reducers';
 import { AdvertisementEffects } from './state/effects';
 import { AdvertisementService } from './services';
