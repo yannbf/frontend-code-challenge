@@ -19,7 +19,7 @@ import { ComponentsModule } from './components/components.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    StoreModule.forRoot({ advertisements: advertisementReducer }),
+    StoreModule.forRoot({ estates: advertisementReducer }),
     EffectsModule.forRoot([AdvertisementEffects]),
     environment.production ? [] : StoreDevtoolsModule.instrument(),
     ComponentsModule,

@@ -2,8 +2,8 @@ import { AdvertisementActions, AdvertisementActionTypes } from '../actions';
 import { Advertisement } from '../../shared/models';
 
 export interface AdvertisementState {
-  advertisements: Array<Advertisement>;
   error: any;
+  advertisements: Array<Advertisement>;
 }
 
 export function advertisementReducer(
