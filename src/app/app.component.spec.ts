@@ -1,11 +1,27 @@
 import { TestBed, async } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages';
+import { AdvertisementService } from './services';
+import { AdvertisementServiceMock } from './services/mock';
+import { advertisementReducer } from './state/reducers';
+import { ComponentsModule } from './components/components.module';
+
 describe('AppComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
         declarations: [AppComponent, HomeComponent],
+        imports: [
+          ComponentsModule,
+          HttpClientModule,
+          StoreModule.forRoot({ advertisements: advertisementReducer }),
+        ],
+        providers: [
+          { provide: AdvertisementService, useClass: AdvertisementServiceMock },
+        ],
       }).compileComponents();
     })
   );
