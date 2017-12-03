@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
 
 import { HomeComponent } from './home.component';
+import { ComponentsModule } from '../../components/components.module';
+import { advertisementReducer } from '../../state/reducers';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -10,6 +13,10 @@ describe('HomeComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [HomeComponent],
+        imports: [
+          ComponentsModule,
+          StoreModule.forRoot({ advertisements: advertisementReducer }),
+        ],
       }).compileComponents();
     })
   );
