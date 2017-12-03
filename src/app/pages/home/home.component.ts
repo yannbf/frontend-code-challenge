@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(public store: Store<AdvertisementState>) {
     this.advertisements$ = this.store.select<Array<Advertisement>>(
-      state => state.advertisements
+      (state: any) => state.estates.advertisements
     );
   }
 
