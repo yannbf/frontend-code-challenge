@@ -1,0 +1,16 @@
+<section class="advertisement-item">
+  {{advertisement.title}}
+  <div *ngIf="advertisement.advertisementAssets.advertisementThumbnails; let assets">
+    <img [src]="assets.inventory_m?.url">
+  </div>
+  <div *ngIf="advertisement.realestateSummary; let summary">
+      {{summary.numberOfRooms}}
+      {{summary.space}}
+      <div *ngIf="summary.address; let address">
+        {{address.fullAddress}}
+      </div>
+  </div>
+
+  <div *ngIf="advertisement.advertisementPrice?.baseRent; let price">{{ price | currency:'EUR'}}</div>
+  <div *ngIf="!advertisement.advertisementPrice?.baseRent; let price">{{ sellPrice | currency:'EUR'}}</div>
+</section>

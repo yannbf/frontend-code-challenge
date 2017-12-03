@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AdvertisementListComponent } from './index';
+import {
+  AdvertisementListComponent,
+  AdvertisementListItemComponent,
+} from './index';
 
-export const COMPONENTS = [AdvertisementListComponent];
+export const COMPONENTS = [
+  AdvertisementListComponent,
+  AdvertisementListItemComponent,
+];
 
 @NgModule({
   declarations: [...COMPONENTS],
