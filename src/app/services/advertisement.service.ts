@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Advertisement } from '../shared/models';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AdvertisementService {
@@ -9,8 +10,8 @@ export class AdvertisementService {
   constructor(public http: HttpClient) {}
 
   getAdvertisements() {
-    return this.http.get<Array<Advertisement>>(
-      `${this.baseUrl}/advertisements`
-    );
+    return this.http
+      .get<Array<Advertisement>>(`${this.baseUrl}/advertisements`)
+      .map((res: any) => res.data);
   }
 }
