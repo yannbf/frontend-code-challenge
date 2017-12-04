@@ -3,8 +3,9 @@
 </ng-container>
 
 <ng-template #showAdvertisements>
-  <app-advertisement-list-item
-    *ngFor="let advertisement of advertisements"
-    [advertisement]="advertisement">
-  </app-advertisement-list-item>
+  <div class="row">
+    <div class="col s12 m6 l6" *ngFor="let advertisement of advertisements">
+      <app-advertisement-list-item [advertisement]="advertisement"></app-advertisement-list-item>
+    </div>
+  </div>
 </ng-template>
