@@ -13,15 +13,15 @@ export function advertisementReducer(
   switch (action.type) {
     case AdvertisementActionTypes.LOAD_ADVERTISEMENTS_SUCCESS: {
       return {
-        error: null,
+        ...state,
         advertisements: action.payload,
       };
     }
 
     case AdvertisementActionTypes.LOAD_ADVERTISEMENTS_FAIL: {
       return {
+        ...state,
         error: action.payload,
-        advertisements: null,
       };
     }
 
