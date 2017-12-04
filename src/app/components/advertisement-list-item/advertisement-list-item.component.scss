@@ -1,1 +1,16 @@
+.card-image {
+  position: relative;
 
+  a {
+    text-transform: initial;
+    padding: 0 0.8rem;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+}
+
+.card-content {
+  padding: 3rem;
+  max-height: 50%;
+}
