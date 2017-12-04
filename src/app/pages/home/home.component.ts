@@ -7,6 +7,7 @@ import { AdvertisementState } from '../../state/reducers';
 import { LoadAdvertisementsAction } from '../../state/actions';
 import { AdvertisementService } from '../../services';
 
+declare const $: any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,6 +23,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    $('.button-collapse').sideNav();
     this.getAdvertisements();
   }
 
