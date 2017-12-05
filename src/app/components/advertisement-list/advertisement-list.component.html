@@ -1,6 +1,15 @@
-<ng-container *ngIf="!advertisements?.length; else showAdvertisements">
-  <h2>Oops! there are no advertisements to show right now :( Try some other time!</h2>
+
+<ng-container *ngIf="error">
+  <h4>There was an error when trying to fetch the advertisements.</h4>
 </ng-container>
+
+<ng-container *ngIf="isLoading; else checkAdvertisements">
+  <h4>Loading...</h4>
+</ng-container>
+
+<ng-template #checkAdvertisements *ngIf="!advertisements?.length; else showAdvertisements">
+  <h2>Oops! there are no advertisements to show right now :( Try some other time!</h2>
+</ng-template>
 
 <ng-template #showAdvertisements>
   <div class="row">

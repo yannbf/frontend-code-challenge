@@ -13,6 +13,8 @@ import {
 })
 export class AdvertisementListComponent implements OnInit {
   @Input() advertisements;
+  @Input() isLoading;
+  @Input() error;
   constructor() {}
 
   ngOnInit() {}
