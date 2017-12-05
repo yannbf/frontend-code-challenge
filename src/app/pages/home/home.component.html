@@ -26,7 +26,11 @@
 
     <div class="container">
         <div class="section">
-            <app-advertisement-list [advertisements]="advertisements$ | async"></app-advertisement-list>
+            <app-advertisement-list
+                [advertisements]="advertisements$ | async"
+                [isLoading]="isLoading$ | async"
+                [error]="error$ | async">
+            </app-advertisement-list>
         </div>
     </div>
 </div>

@@ -15,10 +15,24 @@ declare const $: any;
 })
 export class HomeComponent implements OnInit {
   advertisements$: Observable<Array<Advertisement>>;
+  error$: Observable<boolean>;
+  isLoading$: Observable<boolean>;
 
   constructor(public store: Store<AdvertisementState>) {
+    this.fetchStateData();
+  }
+
+  fetchStateData() {
     this.advertisements$ = this.store.select<Array<Advertisement>>(
       (state: any) => state.estates.advertisements
+    );
+
+    this.isLoading$ = this.store.select<boolean>(
+      (state: any) => state.estates.isLoading
+    );
+
+    this.error$ = this.store.select<boolean>(
+      (state: any) => state.estates.error
     );
   }
 
