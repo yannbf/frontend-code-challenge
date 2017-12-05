@@ -12,6 +12,6 @@ export class AdvertisementService {
   getAdvertisements() {
     return this.http
       .get<Array<Advertisement>>(`${this.baseUrl}/advertisements`)
-      .map((res: any) => res.data);
+      .map((res: any) => res.data.splice(0, 10));
   }
 }
