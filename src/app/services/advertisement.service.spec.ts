@@ -34,10 +34,10 @@ describe('AdvertisementService', () => {
       httpMock.verify();
     });
 
-    it('should return a list of 15 advertisements', () => {
+    it('should return a list of 10 advertisements', () => {
       const mockAdvertisements = AdvertisementServiceMock.ADVERTISEMENTS;
       advertisementService.getAdvertisements().subscribe(advertisements => {
-        expect(advertisements.length).toBe(15);
+        expect(advertisements.length).toBe(10);
       });
 
       const req = httpMock.expectOne(endpoint);
