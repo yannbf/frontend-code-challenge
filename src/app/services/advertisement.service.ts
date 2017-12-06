@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AdvertisementService {
-  baseUrl = 'https://api.mcmakler.de/v1';
+  baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.mcmakler.de/v1';
 
   constructor(public http: HttpClient) {}
 
