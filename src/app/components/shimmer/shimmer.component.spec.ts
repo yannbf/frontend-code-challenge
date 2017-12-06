@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShimmerComponent } from './shimmer.component';
+import { ShimmerComponentService } from './shimmer.service';
 
 describe('ShimmerComponent', () => {
   let component: ShimmerComponent;
@@ -10,6 +11,7 @@ describe('ShimmerComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [ShimmerComponent],
+        providers: [ShimmerComponentService],
       }).compileComponents();
     })
   );
