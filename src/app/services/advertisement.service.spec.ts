@@ -10,7 +10,8 @@ import { AdvertisementServiceMock } from './mock/advertisement.service.mock';
 describe('AdvertisementService', () => {
   let advertisementService: AdvertisementService;
   let httpMock: HttpTestingController;
-  const endpoint = 'https://api.mcmakler.de/v1/advertisements';
+  const endpoint =
+    'https://cors-anywhere.herokuapp.com/https://api.mcmakler.de/v1/advertisements';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
