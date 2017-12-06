@@ -13,8 +13,7 @@
     "precommit": "lint-staged",
     "prepush": "ng test --browsers='ChromeHeadless' --watch=false",
     "precache": "sw-precache --verbose --config=sw-precache-config.js",
-    "deploy": "npm run build --prod --base-href='https://yannbf.github.io/frontend-code-challenge/'",
-    "postdeploy": "node copy_www_to_docs.js"
+    "deploy": "npm run build --prod"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +43,7 @@
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "angular2-template-loader": "^0.6.2",
     "codelyzer": "~3.2.0",
     "husky": "^0.14.3",
     "jasmine-core": "~2.6.2",
@@ -61,6 +61,7 @@
     "sw-precache": "^5.2.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.4.2"
+    "typescript": "~2.4.2",
+    "wallaby-webpack": "^3.9.3"
   }
 }
