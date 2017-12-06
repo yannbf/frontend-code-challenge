@@ -7,23 +7,14 @@ import { advertisementReducer } from '../../state/reducers';
 import { Component } from '@angular/core';
 import { AdvertisementServiceMock } from '../../services/mock/index';
 
-@Component({
-  selector: 'app-host-component',
-  template:
-    '<app-advertisement-list [advertisements]="advertisements"></app-advertisement-list>',
-})
-class DummyHostComponent {
-  advertisements = AdvertisementServiceMock.ADVERTISEMENTS;
-}
-
 describe('HomeComponent', () => {
-  let component: DummyHostComponent;
-  let fixture: ComponentFixture<DummyHostComponent>;
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [HomeComponent, DummyHostComponent],
+        declarations: [HomeComponent],
         imports: [
           ComponentsModule,
           StoreModule.forRoot({ estates: advertisementReducer }),
@@ -33,7 +24,7 @@ describe('HomeComponent', () => {
   );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DummyHostComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
