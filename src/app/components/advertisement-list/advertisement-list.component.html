@@ -1,23 +1,33 @@
 
-<ng-container *ngIf="error">
-  <h4>There was an error when trying to fetch the advertisements.</h4>
+<ng-container *ngIf="error; else startLoading">
+  <div class="empty-state">
+    <p>There was an error when trying to fetch the advertisements.</p>
+    <p>Please try refreshing the page.</p>
+    <img src="assets/img/ErrorIcon.svg">
+  </div>
 </ng-container>
 
-<ng-container *ngIf="isLoading; else checkAdvertisements">
+<ng-container #startLoading
+    *ngIf="isLoading; else checkAdvertisements">
   <section class="row">
-      <div class="col s12 m6 l6" *ngFor="let shimmer of [1,2,3,4]">
+      <div class="col s12 m6 l4" *ngFor="let shimmer of [1,2,3,4,5,6]">
         <app-advertisement-placeholder></app-advertisement-placeholder>
       </div>
   </section>
 </ng-container>
 
-<ng-template #checkAdvertisements *ngIf="!advertisements?.length; else showAdvertisements">
-  <h2>Oops! there are no advertisements to show right now :( Try some other time!</h2>
-</ng-template>
+<ng-container #checkAdvertisements
+    *ngIf="!isLoading && !error && advertisements?.length <= 0; else showAdvertisements">
+  <div class="empty-state">
+    <p>Oops! there are no advertisements to show right now :(</p>
+    <p>Please try some other time!</p>
+    <img src="assets/img/EmptyIcon.svg">
+  </div>
+</ng-container>
 
 <ng-template #showAdvertisements>
   <div class="row">
-    <div class="col s12 m6 l6" *ngFor="let advertisement of advertisements">
+    <div class="col s12 m6 l4" *ngFor="let advertisement of advertisements">
       <app-advertisement-list-item [advertisement]="advertisement"></app-advertisement-list-item>
     </div>
   </div>

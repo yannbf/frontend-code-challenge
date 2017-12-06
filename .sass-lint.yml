@@ -51,7 +51,7 @@ rules:
   # Nesting
   declarations-before-nesting: 1
   force-attribute-nesting: 2
-  force-element-nesting: 2
+  force-element-nesting: 6
   force-pseudo-nesting: 0
 
   # Name Formats
