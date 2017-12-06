@@ -1,8 +1,14 @@
 # Real Estatium
 
-Project created as a challenge from McMakler. It shows real estate advertisements and their info (based in euro).
+<p align="center"><img src="screens/LogoAnimation.gif" alt="logo"/></p>
 
-Regarding the layout, some dummy stuff was added just to make the project look more like a complete application, instead of just showing the required components.
+This project was created as a challenge for [McMakler](https://mcmakler.de).
+It shows real estate advertisements and their info (based in germany).
+
+Animation at: https://codepen.io/yannbf/pen/yPrZYE
+
+
+Regarding the layout, some dummy stuff was added just to make the project look more like a complete application, instead of just showing the required components. I created the logo and did a nice animation, but decided to leave the project just as image to make it look more serious. The animation is available at: 
 If you just want to see how the application looks like, check the SCREENS folder in this repo, or check the live demo here: https://real-estatium.firebaseapp.com
 
 ## Project Features
@@ -10,7 +16,7 @@ If you just want to see how the application looks like, check the SCREENS folder
 * Preprocessor: SASS. Chosen because it's way better than CSS, as you have superpowers like @import, color functions, variables, and so on.
 * Framework: Angular5. Chosen because Angular is a powerful framework that is built with a reactive way of thinking. Working with RxJS is incredible and even better when mixed with NGRX. Angular comes with typescript, which is great to be adopted in large projects, not only giving great autocompletion and access to documentation, but also enhancing the development process and greatly reducing errors before they ever get the chance to happen.
 
-* Unit Tests with Jasmine and Karma.
+* Unit Tests with Jasmine and Karma. I unfortunately didn't do much on tests as time was not in favor, but I will eventually add more coverage.
 * Prettier for a better standardized code.
 * TSLINT and SASSLINT for better development and readability of the produced code.
 * NGRX/STORE + EFFECTS, used just to show state management skills, as the scope of the project doesn't call much for such setup.
@@ -19,7 +25,8 @@ If you just want to see how the application looks like, check the SCREENS folder
 * Well moduled and componentially structured.
 * Wallaby ready.
 * Husky + LintStaged + Git hooks: precommit for running linters and prettier, prepush for doing unit tests. 
-* Uses materialize to follow google material design standards
+* Uses materialize to follow google material design standards.
+* Beautiful stuff made by me using Sketch! :D
 
 ## Credits
 
