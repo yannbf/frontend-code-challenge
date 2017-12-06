@@ -12,7 +12,9 @@
     "e2e": "ng e2e",
     "precommit": "lint-staged",
     "prepush": "ng test --browsers='ChromeHeadless' --watch=false",
-    "precache": "sw-precache --verbose --config=sw-precache-config.js"
+    "precache": "sw-precache --verbose --config=sw-precache-config.js",
+    "deploy": "npm run build --prod",
+    "postdeploy": "node copy_www_to_docs.js"
   },
   "private": true,
   "dependencies": {
