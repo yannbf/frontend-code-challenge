@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import {
   AdvertisementListComponent,
   AdvertisementListItemComponent,
+  ShimmerComponentModule,
 } from './index';
 
 export const COMPONENTS = [
@@ -13,7 +14,7 @@ export const COMPONENTS = [
 
 @NgModule({
   declarations: [...COMPONENTS],
-  imports: [CommonModule],
-  exports: [...COMPONENTS],
+  imports: [CommonModule, ShimmerComponentModule],
+  exports: [...COMPONENTS, ShimmerComponentModule],
 })
 export class ComponentsModule {}

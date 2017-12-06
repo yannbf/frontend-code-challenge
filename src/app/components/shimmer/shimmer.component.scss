@@ -1,0 +1,78 @@
+$color-shimmer-background: linear-gradient(
+  to right,
+  #eeeeee 8%,
+  #dddddd 18%,
+  #eeeeee 33%
+);
+$width-sm: 25%;
+$width-md: 50%;
+$width-lg: 90%;
+$width-xl: 100%;
+$height-img: 20rem;
+
+@keyframes shimmer {
+  from {
+    background-position: -500px 0;
+  }
+
+  to {
+    background-position: 500px 0;
+  }
+}
+
+:host {
+  display: inherit;
+
+  &.loading {
+    &::after {
+      animation: shimmer 1.3s infinite ease-out forwards;
+      background: $color-shimmer-background;
+      background-size: 800px 104px;
+      border-radius: 6px;
+      content: '\00a0';
+      display: inline-block;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+
+    &.paragraph {
+      &::after,
+      &::before {
+        width: 100%;
+      }
+
+      &::before {
+        animation: pulse 2s infinite ease-in-out;
+        border-radius: 6px;
+        content: '\00a0';
+        display: inline-block;
+        margin-bottom: 5px;
+        width: 100%;
+      }
+    }
+
+    &.xl::after {
+      width: $width-xl;
+    }
+
+    &.lg::after {
+      width: $width-lg;
+    }
+
+    &.md::after {
+      width: $width-md;
+    }
+
+    &.sm::after {
+      width: $width-sm;
+    }
+  }
+
+  &.img {
+    &.loading::after {
+      border-radius: 0;
+      height: $height-img;
+      width: 100%;
+    }
+  }
+}
