@@ -1,16 +1,72 @@
+@import '../../theme/variables';
+
 .card-image {
   position: relative;
 
   a {
-    text-transform: initial;
+    left: 1.5rem;
     padding: 0 0.8rem;
     position: absolute;
+    text-transform: initial;
     top: 1.5rem;
-    left: 1.5rem;
   }
 }
 
-.card-content {
+.card .card-content {
+  padding-top: 3rem;
+
+  p {
+    color: $color-light-grey;
+  }
+
+  .address {
+    margin-bottom: 3rem;
+    margin-left: 0.2rem;
+    margin-top: 1rem;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 400;
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  .estate-info {
+    font-size: 16px;
+  }
+
+  @media only screen and (max-width: 968px) and (min-width: 600px) {
+    .estate-info {
+      font-size: 14px;
+    }
+
+    .title {
+      font-size: 16px;
+    }
+  }
+}
+
+.card-reveal {
+  p {
+    align-items: center;
+    display: flex;
+
+    i {
+      color: $color-primary;
+    }
+  }
+}
+
+.card.medium .card-image + .card-content {
+  max-height: 100%;
   padding: 3rem;
-  max-height: 50%;
+}
+
+@media only screen and (max-width: 968px) and (min-width: 600px) {
+  .card.large {
+    height: 400px;
+  }
 }

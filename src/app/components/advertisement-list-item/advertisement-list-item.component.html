@@ -1,38 +1,51 @@
 <section class="advertisement-item">
-  <div class="card medium">
-      <div *ngIf="advertisement.advertisementAssets.advertisementThumbnails; let assets"
-           class="card-image waves-effect waves-block waves-light">
-        <a class="waves-effect waves-light white btn grey-text">Mieten</a>
-        <img class="activator" [src]="assets.inventory_m?.url">
+  <div class="card hoverable medium large">
+      <div *ngIf="advertisement.advertisementAssets; let assets"
+           class="card-image">
+           <a class="waves-effect waves-light white btn grey-text"
+              *ngIf="!advertisement.advertisementPrice?.sellPrice">Mieten</a>
+           <a class="waves-effect waves-light white btn grey-text"
+              *ngIf="advertisement.advertisementPrice?.sellPrice">Kaufen</a>
+
+           <img class="materialboxed" [src]="assets[0].advertisementThumbnails.inventory_m?.url">
       </div>
-      <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">{{advertisement.title}}</span>
-        <div class="row">
+      <div class="card-content" *ngIf="advertisement.realestateSummary; let summary">
+        <span class="title activator grey-text text-darken-4">{{advertisement.title}}<i class="material-icons right">more_vert</i></span>
+        <p class="address">
+          {{summary.address.postalCode}} {{summary.address.postalCode}} / {{summary.address.city}}
+        </p>
+        <div class="row estate-info">
             <div class="col s4">
               <strong *ngIf="advertisement.advertisementPrice?.baseRent; let price">{{ price | currency:'EUR'}}</strong>
               <strong *ngIf="!advertisement.advertisementPrice?.baseRent; let price">{{ sellPrice | currency:'EUR'}}</strong>
             </div>
-            <div *ngIf="advertisement.realestateSummary; let summary">
-              <div class="col s2">
-                  {{summary.numberOfRooms}}
-              </div>
-              <div class="col s4">
-                  {{summary.space.toFixed(2)}} m²
-              </div>
+            <div>
+              <span class="col s4" style="text-align: right;">
+                {{summary.numberOfRooms}} Zimmer
+              </span>
+              <span class="col s4">
+                ab {{summary.space.toFixed(2)}} m²
+              </span>
             </div>
         </div>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{advertisement.title}}<i class="material-icons right">close</i></span>
         <div *ngIf="advertisement.realestateSummary; let summary">
-            <p>Number of rooms: {{summary.numberOfRooms}}</p>
-            <p>Space: {{summary.space.toFixed(2)}} m²</p>
+            <p><i class="material-icons left">view_carousel</i> Number of rooms: {{summary.numberOfRooms}}</p>
+            <p><i class="material-icons left">select_all</i> Space: {{summary.space.toFixed(2)}} m²</p>
             <div *ngIf="summary.address; let address">
-              <p>Address: {{address.fullAddress}}</p>
+              <p><i class="material-icons left">location_on</i> Address: {{address.fullAddress || 'Not specified'}}</p>
             </div>
         </div>
-        <p *ngIf="advertisement.advertisementPrice?.baseRent; let price">Price {{ price | currency:'EUR'}}</p>
-        <p *ngIf="!advertisement.advertisementPrice?.baseRent; let price">Price {{ sellPrice | currency:'EUR'}}</p>
+        <p *ngIf="advertisement.advertisementPrice?.baseRent; let price">
+          <i class="material-icons left">euro_symbol</i>
+          Base rent: <strong>{{(price | currency:'EUR') || 'Not specified'}}</strong>
+        </p>
+        <p *ngIf="!advertisement.advertisementPrice?.baseRent; let price">
+          <i class="material-icons left">euro_symbol</i>
+          Sell price: <strong>{{(sellPrice | currency:'EUR') || 'Not specified'}}</strong>
+        </p>
       </div>
   </div>
 </section>

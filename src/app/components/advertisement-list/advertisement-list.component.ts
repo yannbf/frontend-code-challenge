@@ -11,11 +11,8 @@ import {
   styleUrls: ['./advertisement-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AdvertisementListComponent implements OnInit {
+export class AdvertisementListComponent {
   @Input() advertisements;
   @Input() isLoading;
   @Input() error;
-  constructor() {}
-
-  ngOnInit() {}
 }
