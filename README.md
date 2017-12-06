@@ -3,7 +3,7 @@
 Project created as a challenge from McMakler. It shows real estate advertisements and their info (based in euro).
 
 Regarding the layout, some dummy stuff was added just to make the project look more like a complete application, instead of just showing the required components.
-If you just want to see how the application looks like, check the SCREENS folder in this repo.
+If you just want to see how the application looks like, check the SCREENS folder in this repo, or check the live demo here: https://real-estatium.firebaseapp.com
 
 ## Project Features
 
@@ -14,13 +14,11 @@ If you just want to see how the application looks like, check the SCREENS folder
 * Prettier for a better standardized code.
 * TSLINT and SASSLINT for better development and readability of the produced code.
 * NGRX/STORE + EFFECTS, used just to show state management skills, as the scope of the project doesn't call much for such setup.
-* Redux DevTools ready.
+* Redux DevTools ready. <3
 * Responsive application.
 * Well moduled and componentially structured.
-* PWA ready.
 * Wallaby ready.
 * Husky + LintStaged + Git hooks: precommit for running linters and prettier, prepush for doing unit tests. 
-* Customized npm scripts: Deploy, to build the production version of the application and make it ready for github pages. 
 * Uses materialize to follow google material design standards
 
 ## Credits
