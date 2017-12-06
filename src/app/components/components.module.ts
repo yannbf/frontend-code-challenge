@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import {
   AdvertisementListComponent,
   AdvertisementListItemComponent,
+  AdvertisementPlaceholderComponent,
   ShimmerComponentModule,
 } from './index';
 
 export const COMPONENTS = [
   AdvertisementListComponent,
   AdvertisementListItemComponent,
+  AdvertisementPlaceholderComponent,
 ];
 
 @NgModule({
