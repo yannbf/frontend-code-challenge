@@ -140,7 +140,7 @@ var AppModule = (function () {
 /***/ "../../../../../src/app/components/advertisement-list-item/advertisement-list-item.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"advertisement-item\">\n  <div class=\"card hoverable medium large\">\n      <div *ngIf=\"advertisement.advertisementAssets; let assets\"\n           class=\"card-image\">\n           <a class=\"waves-effect waves-light white btn grey-text\"\n              *ngIf=\"!advertisement.advertisementPrice?.sellPrice\">Mieten</a>\n           <a class=\"waves-effect waves-light white btn grey-text\"\n              *ngIf=\"advertisement.advertisementPrice?.sellPrice\">Kaufen</a>\n\n           <img class=\"materialboxed\" [src]=\"assets[0].advertisementThumbnails.inventory_m?.url\">\n      </div>\n      <div class=\"card-content\" *ngIf=\"advertisement.realestateSummary; let summary\">\n        <span class=\"title activator grey-text text-darken-4\">{{advertisement.title}}<i class=\"material-icons right\">more_vert</i></span>\n        <p class=\"address\">\n          {{summary.address.postalCode}} {{summary.address.postalCode}} / {{summary.address.city}}\n        </p>\n        <div class=\"row estate-info\">\n            <div class=\"col s4\">\n              <strong *ngIf=\"advertisement.advertisementPrice?.baseRent; let price\">{{ price | currency:'EUR'}}</strong>\n              <strong *ngIf=\"!advertisement.advertisementPrice?.baseRent; let price\">{{ sellPrice | currency:'EUR'}}</strong>\n            </div>\n            <div>\n              <span class=\"col s4\" style=\"text-align: right;\">\n                {{summary.numberOfRooms}} Zimmer\n              </span>\n              <span class=\"col s4\">\n                ab {{summary.space.toFixed(2)}} m²\n              </span>\n            </div>\n        </div>\n      </div>\n      <div class=\"card-reveal\">\n        <span class=\"card-title grey-text text-darken-4\">{{advertisement.title}}<i class=\"material-icons right\">close</i></span>\n        <div *ngIf=\"advertisement.realestateSummary; let summary\">\n            <p><i class=\"material-icons left\">view_carousel</i> Number of rooms: {{summary.numberOfRooms}}</p>\n            <p><i class=\"material-icons left\">select_all</i> Space: {{summary.space.toFixed(2)}} m²</p>\n            <div *ngIf=\"summary.address; let address\">\n              <p><i class=\"material-icons left\">location_on</i> Address: {{address.fullAddress || 'Not specified'}}</p>\n            </div>\n        </div>\n        <p *ngIf=\"advertisement.advertisementPrice?.baseRent; let price\">\n          <i class=\"material-icons left\">euro_symbol</i>\n          Base rent: <strong>{{(price | currency:'EUR') || 'Not specified'}}</strong>\n        </p>\n        <p *ngIf=\"!advertisement.advertisementPrice?.baseRent; let price\">\n          <i class=\"material-icons left\">euro_symbol</i>\n          Sell price: <strong>{{(sellPrice | currency:'EUR') || 'Not specified'}}</strong>\n        </p>\n      </div>\n  </div>\n</section>\n"
+module.exports = "<section class=\"advertisement-item\">\n  <div class=\"card hoverable medium large\">\n      <div *ngIf=\"advertisement.advertisementAssets; let assets\"\n           class=\"card-image\">\n           <a class=\"waves-effect waves-light white btn grey-text\"\n              *ngIf=\"!advertisement.advertisementPrice?.sellPrice\">Mieten</a>\n           <a class=\"waves-effect waves-light white btn grey-text\"\n              *ngIf=\"advertisement.advertisementPrice?.sellPrice\">Kaufen</a>\n\n           <img class=\"materialboxed\" [src]=\"assets.advertisementThumbnails.inventory_m?.url\">\n      </div>\n      <div class=\"card-content\" *ngIf=\"advertisement.realestateSummary; let summary\">\n        <span class=\"title activator grey-text text-darken-4\">{{advertisement.title}}<i class=\"material-icons right\">more_vert</i></span>\n        <p class=\"address\">\n          {{summary.address.postalCode}} {{summary.address.postalCode}} / {{summary.address.city}}\n        </p>\n        <div class=\"row estate-info\">\n            <div class=\"col s4\">\n              <strong *ngIf=\"advertisement.advertisementPrice?.baseRent; let price\">{{ price | currency:'EUR'}}</strong>\n              <strong *ngIf=\"!advertisement.advertisementPrice?.baseRent; let price\">{{ sellPrice | currency:'EUR'}}</strong>\n            </div>\n            <div>\n              <span class=\"col s4\" style=\"text-align: right;\">\n                {{summary.numberOfRooms}} Zimmer\n              </span>\n              <span class=\"col s4\">\n                {{summary.space.toFixed(2)}} m²\n              </span>\n            </div>\n        </div>\n      </div>\n      <div class=\"card-reveal\">\n        <span class=\"card-title grey-text text-darken-4\">{{advertisement.title}}<i class=\"material-icons right\">close</i></span>\n        <div *ngIf=\"advertisement.realestateSummary; let summary\">\n            <p><i class=\"material-icons left\">view_carousel</i> Number of rooms: {{summary.numberOfRooms}}</p>\n            <p><i class=\"material-icons left\">select_all</i> Space: {{summary.space.toFixed(2)}} m²</p>\n            <div *ngIf=\"summary.address; let address\">\n              <p><i class=\"material-icons left\">location_on</i> Address: {{address.fullAddress || 'Not specified'}}</p>\n            </div>\n        </div>\n        <p *ngIf=\"advertisement.advertisementPrice?.baseRent; let price\">\n          <i class=\"material-icons left\">euro_symbol</i>\n          Base rent: <strong>{{(price | currency:'EUR') || 'Not specified'}}</strong>\n        </p>\n        <p *ngIf=\"!advertisement.advertisementPrice?.baseRent; let price\">\n          <i class=\"material-icons left\">euro_symbol</i>\n          Sell price: <strong>{{(sellPrice | currency:'EUR') || 'Not specified'}}</strong>\n        </p>\n      </div>\n  </div>\n</section>\n"
 
 /***/ }),
 
@@ -632,7 +632,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AdvertisementService = (function () {
     function AdvertisementService(http) {
         this.http = http;
-        this.baseUrl = 'https://api.mcmakler.de/v1';
+        this.baseUrl = 'https://cors-anywhere.herokuapp.com/https://api.mcmakler.de/v1';
     }
     AdvertisementService.prototype.getAdvertisements = function () {
         return this.http
@@ -716,7 +716,7 @@ var AdvertisementServiceMock = (function () {
                             },
                             fileId: 'thumbnail.59887490267115.54069533.jpg',
                             filename: 'thumbnail_of_.jpg',
-                            url: 'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.59887490267115.54069533.jpg',
+                            url: 'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.5978b09d549d51.43128412.jpg',
                             mimeType: 'image/jpg',
                             metadata: {
                                 width: 610,
@@ -1804,7 +1804,7 @@ var AdvertisementServiceMock = (function () {
                             },
                             fileId: 'thumbnail.59f1daa0e8fe82.38067957.jpg',
                             filename: 'thumbnail_of_Bild 2.jpg.jpg',
-                            url: 'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.59f1daa0e8fe82.38067957.jpg',
+                            url: 'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.59412177b211e6.13622439.jpg',
                             mimeType: 'image/jpg',
                             metadata: {
                                 width: 610,
@@ -2014,7 +2014,7 @@ var LoadAdvertisementsFailAction = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/catch.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__ = __webpack_require__("../../../../rxjs/_esm5/observable/of.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__actions__ = __webpack_require__("../../../../../src/app/state/actions/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services__ = __webpack_require__("../../../../../src/app/services/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_mock__ = __webpack_require__("../../../../../src/app/services/mock/index.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2052,7 +2052,7 @@ var AdvertisementEffects = (function () {
     ], AdvertisementEffects.prototype, "loadAdvertisements$", void 0);
     AdvertisementEffects = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__services__["a" /* AdvertisementService */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_7__services_mock__["a" /* AdvertisementServiceMock */],
             __WEBPACK_IMPORTED_MODULE_1__ngrx_effects__["a" /* Actions */]])
     ], AdvertisementEffects);
     return AdvertisementEffects;
