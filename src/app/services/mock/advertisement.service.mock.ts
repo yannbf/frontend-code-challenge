@@ -50,7 +50,7 @@ export class AdvertisementServiceMock {
               fileId: 'thumbnail.59887490267115.54069533.jpg',
               filename: 'thumbnail_of_.jpg',
               url:
-                'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.59887490267115.54069533.jpg',
+                'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.5978b09d549d51.43128412.jpg',
               mimeType: 'image/jpg',
               metadata: {
                 width: 610,
@@ -1171,7 +1171,7 @@ export class AdvertisementServiceMock {
               fileId: 'thumbnail.59f1daa0e8fe82.38067957.jpg',
               filename: 'thumbnail_of_Bild 2.jpg.jpg',
               url:
-                'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.59f1daa0e8fe82.38067957.jpg',
+                'https://d3e02gns9oqhhr.cloudfront.net/assets/expose_v2/thumbnail.59412177b211e6.13622439.jpg',
               mimeType: 'image/jpg',
               metadata: {
                 width: 610,

@@ -7,7 +7,7 @@
            <a class="waves-effect waves-light white btn grey-text"
               *ngIf="advertisement.advertisementPrice?.sellPrice">Kaufen</a>
 
-           <img class="materialboxed" [src]="assets[0].advertisementThumbnails.inventory_m?.url">
+           <img class="materialboxed" [src]="assets.advertisementThumbnails.inventory_m?.url">
       </div>
       <div class="card-content" *ngIf="advertisement.realestateSummary; let summary">
         <span class="title activator grey-text text-darken-4">{{advertisement.title}}<i class="material-icons right">more_vert</i></span>
@@ -24,7 +24,7 @@
                 {{summary.numberOfRooms}} Zimmer
               </span>
               <span class="col s4">
-                ab {{summary.space.toFixed(2)}} m²
+                {{summary.space.toFixed(2)}} m²
               </span>
             </div>
         </div>

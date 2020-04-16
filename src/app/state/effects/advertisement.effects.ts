@@ -16,7 +16,7 @@ import { AdvertisementServiceMock } from '../../services/mock';
 @Injectable()
 export class AdvertisementEffects {
   constructor(
-    private advertisementService: AdvertisementService,
+    private advertisementService: AdvertisementServiceMock,
     private actions$: Actions
   ) {}
 

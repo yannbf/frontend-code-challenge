@@ -9,7 +9,7 @@ Animation at: https://codepen.io/yannbf/pen/yPrZYE
 
 
 Regarding the layout, some dummy stuff was added just to make the project look more like a complete application, instead of just showing the required components. I created the logo and did a nice animation, but decided to leave the project just as image to make it look more serious. The animation is available at: 
-If you just want to see how the application looks like, check the SCREENS folder in this repo, or check the live demo here: https://real-estatium.firebaseapp.com
+If you just want to see how the application looks like, check the SCREENS folder in this repo, or check the live demo here: https://real-estatium.web.app
 
 ## Project Features
 
